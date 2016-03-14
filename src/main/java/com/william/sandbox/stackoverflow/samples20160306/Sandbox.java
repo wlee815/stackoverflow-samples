@@ -1,4 +1,4 @@
-package com.william.sandbox;
+package com.william.sandbox.stackoverflow.samples20160306;
 
 /**
  */
