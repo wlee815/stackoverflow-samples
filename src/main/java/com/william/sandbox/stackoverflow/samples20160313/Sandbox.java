@@ -7,23 +7,22 @@ import java.util.Set;
 
 public class Sandbox {
 
-    private static Set allCountries = new HashSet();
+    private static Set<String> allCountries = new HashSet();
 
-    private static void distinctAdd(String country, List targetList){
+    private static void distinctAdd(String country, List<String> targetList){
         if(!allCountries.contains(country)){
+            allCountries.add(country);
             targetList.add(country);
-        }else{
-            //don't add duplicates!
         }
+        //else
+        //don't add duplicates!
     }
 
     public static void main(String args[]) {
 
-//This is creating the ArrayList with everything added
-
-        List one = new ArrayList();
-        List two = new ArrayList();
-        List three = new ArrayList();
+        List<String> one = new ArrayList();
+        List<String> two = new ArrayList();
+        List<String> three = new ArrayList();
 
         distinctAdd("United States", one);
         distinctAdd("United Kingdom", one);
@@ -42,6 +41,7 @@ public class Sandbox {
         distinctAdd("India", two);
         distinctAdd("Australia", two);
         distinctAdd("Deutschland", two);
+        distinctAdd("United States", two);
 
         distinctAdd("Norway", three);
         distinctAdd("Kosovo", three);
@@ -50,8 +50,6 @@ public class Sandbox {
         distinctAdd("United Arab Emirates", three);
         distinctAdd("Bahrain", three);
         distinctAdd("Haiti", three);
-
-//Formatting purposes
 
         System.out.println("Country Categories: ");
         System.out.println("#1 Countries = " + one);
